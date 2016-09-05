@@ -3,34 +3,21 @@
 <head>
     <title>Прогноз погоды</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-<script>
-
-    $( function() {
-
-        $('#getForecast').click( function() {
-            var data = { city: "Васюки", date: "20120318" };
-            $.get( "getForecast.txt", data, success, "json" );
-        } );
-
-        function success( forecastData ) {
-            var forecast = forecastData.city + " прогноз на " + forecastData.date;
-            forecast += ": " + forecastData.forecast + ". Максимальная температура: " + forecastData.maxTemp + "C";
-            alert( forecast );
-        }
-
-    } );
-
-</script>
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-<button id="getForecast">Получить прогноз погоды</button>
+<button id="getForecast">Получить прогноз погоды ($.get)</button>
+<button id="getForecast-2">Получить прогноз погоды 2 ($.post)</button>
+<button id="getUser">Получить данные пользователя ($.ajax)</button>
 
+<div class="result">Empty result</div>
+
+<script src="js/common.js"></script>
 </body>
 </html>
